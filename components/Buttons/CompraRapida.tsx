@@ -1,4 +1,4 @@
-import { useAppState } from "@/hooks/AppStateContext";
+import { useAppState } from "../../hooks/AppStateContext";
 
 const CompraRapida = () => {
   const { globalState, setGlobalState } = useAppState();

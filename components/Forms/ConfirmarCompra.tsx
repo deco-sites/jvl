@@ -1,4 +1,4 @@
-import { useAppState } from "@/hooks/AppStateContext";
+import { useAppState } from "../../hooks/AppStateContext";
 import { FormEvent } from "react";
 
 export default function Example() {
