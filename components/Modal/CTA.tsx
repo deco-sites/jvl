@@ -1,11 +1,10 @@
 import { Fragment, useRef, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import Image from "next/image";
-import BannerDesktop from "@/public/banner_desktop.svg";
-import BannerMobile from "@/public/banner_mobile.svg";
-import CloseBtn from "@/public/XCircleFill.svg";
-import { useSizeScreen } from "@/hooks/useSizeScreen";
-import { useAppState } from "@/hooks/AppStateContext";
+import BannerDesktop from "../../public/banner_desktop.svg";
+import BannerMobile from "../../public/banner_mobile.svg";
+import CloseBtn from "../../public/XCircleFill.svg";
+import { useSizeScreen } from "../../hooks/useSizeScreen";
+import { useAppState } from "../../hooks/AppStateContext";
 
 export default function Example() {
   const { width, height } = useSizeScreen();
@@ -79,14 +78,14 @@ export default function Example() {
                   }}
                 >
                   {width >= 900 ? (
-                    <Image
+                    <image
                       src={BannerDesktop}
                       style={{ width: "75%", height: "auto" }}
                       alt={"BannerDesktop"}
                       onClick={realizarCadastro}
                     />
                   ) : (
-                    <Image
+                    <image
                       src={BannerMobile}
                       style={{ width: "75%", height: "auto" }}
                       alt={"BannerMobile1"}
@@ -96,7 +95,7 @@ export default function Example() {
                   <div
                     style={{ position: "absolute", top: "1rem", right: "1rem" }}
                   >
-                    <Image
+                    <image
                       src={CloseBtn}
                       alt={"Close"}
                       style={{

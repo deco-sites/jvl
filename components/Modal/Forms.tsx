@@ -1,7 +1,7 @@
 import { Fragment, useRef, useState, useEffect, ReactNode } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { useSizeScreen } from "@/hooks/useSizeScreen";
-import { useAppState } from "@/hooks/AppStateContext";
+import { useSizeScreen } from "../../hooks/useSizeScreen";
+import { useAppState } from "../../hooks/AppStateContext";
 
 interface Props {
   forms: ReactNode;
