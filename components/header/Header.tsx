@@ -6,6 +6,10 @@ import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
+import Forms from "../Modal/Forms.tsx";
+import Cadastro from "../Forms/Cadastro";
+import CompraRapida from "../Buttons/CompraRapida";
+import ConfirmarCompra from "../Forms/ConfirmarCompra";
 
 export interface Props {
   alerts: string[];
@@ -23,23 +27,18 @@ export interface Props {
   logo?: { src: ImageWidget; alt: string };
 }
 
-function Header({
-  alerts,
-  searchbar,
-  navItems,
-  logo,
-}: Props) {
+function Header({ alerts, searchbar, navItems, logo }: Props) {
   const platform = usePlatform();
   const items = navItems ?? [];
 
   return (
     <>
       <header style={{ height: headerHeight }}>
-        <Drawers
-          menu={{ items }}
-          searchbar={searchbar}
-          platform={platform}
-        >
+        <CompraRapida />
+        <CTA />
+        <Forms tipo="cadastro" forms={<Cadastro />} />
+        <Forms tipo="confirmacao" forms={<ConfirmarCompra />} />
+        <Drawers menu={{ items }} searchbar={searchbar} platform={platform}>
           <div class="bg-base-100 fixed w-full z-50">
             <Alert alerts={alerts} />
             <Navbar
